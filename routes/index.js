@@ -1,10 +1,15 @@
 const router = require("express").Router()
-const Controller = require('../controllers/ControllerRegister')
+const productRouter = require("./product")
 const routerLogin = require('./login')
+const cartRouter = require("./cart")
+
+const ProductController = require("../controllers/product.js")
+const Controller = require('../controllers/ControllerRegister')
 
 router.get('/register', Controller.Register)
 router.post('/register', Controller.PostRegister)
 router.use('/login', routerLogin)
+router.get("/", ProductController.LandingPageProduct)
 
 router.use(function (req, res, next) {
   if (!req.session.userName) {
@@ -15,9 +20,7 @@ router.use(function (req, res, next) {
 
 })
 
-router.get('/', (rew, res) => {
-  res.send('halaman utama')
-})
-
+router.use("/carts", cartRouter)
+router.use("/products", productRouter)
 
 module.exports = router
