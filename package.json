@@ -24,7 +24,6 @@
     "express-session": "^1.17.1",
     "pg": "^8.4.1",
     "sequelize": "^6.3.5",
-    "sequelize-cli": "^6.2.0",
-    "session": "^0.1.0"
+    "sequelize-cli": "^6.2.0"
   }
 }
