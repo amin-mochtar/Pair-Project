@@ -1,0 +1,19 @@
+<%- include("partials/head", {title: "product description"}) %> 
+
+<body>
+    <!-- -->
+
+    <div>
+        <img src="<%= data.picture%>"> <br>
+        <p><%= data.description %> </p> <br>
+        <p><%= data.price %> </p>
+        <button onclick="clickAddToCart('<%= data.id %>')">tambah ke keranjang</button>
+    </div>
+</body>
+<script>
+const clickAddToCart = (id) => {
+    alert(id)
+    window.location.href = `/carts/${id}/add`
+}
+</script>
+</html>

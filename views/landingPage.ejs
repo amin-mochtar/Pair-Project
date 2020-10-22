@@ -1,0 +1,33 @@
+<%- include("partials/head", {title: "Home Page"}) %>
+
+<body>
+    <%- include("partials/nav", {carts}) %>
+
+    <h3 class="section-title">List Product</h3>
+
+    <% products.forEach(el => { %>
+    <div class="contents">
+        <div class="contents-item">
+            <img src="<%= el.picture %> ">
+            <p><%= el.name %> </p>
+            <p><%= el.price%> </p>
+            <button onclick="clickProductDescrition('<%= el.id %>')"> Description</button>
+            <button onclick="clickAddToCart('<%= el.id %>')">tambah ke keranjang</button>
+        </div>
+    </div>
+    <% }) %>
+
+</body>
+
+<%- include("partials/footer") %>
+<script>
+    const clickProductDescrition = (id) => {
+        window.location.href = `/products/${id}/description`
+    }
+    const clickAddToCart = (id) => {
+        alert(id)
+        window.location.href = `/carts/${id}/add`
+    }
+</script>
+
+</html>

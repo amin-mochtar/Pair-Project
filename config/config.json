@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "postgres",
-    "password": "UD2014FR",
-    "database": "shoppingApp",
+    "password": "postgres",
+    "database": "shopping_App",
     "host": "localhost",
     "dialect": "postgres"
   },
