@@ -1,22 +1,22 @@
 <%- include("partials/head", {title: "Home Page"}) %>
 
 <body>
-    <%- include("partials/nav", {carts}) %>
+    <%- include("partials/nav", {carts, user}) %>
 
     <h3 class="section-title">List Product</h3>
 
-    <% products.forEach(el => { %>
-    <div class="contents" style="float: left;">
-        <div class="contents-item" style="display: inline-block;">
+
+    <div class="contents">
+        <% products.forEach(el => { %>
+        <div class="contents-item">
             <img src="<%= el.picture %> ">
             <p><%= el.name %> </p>
-            <p><%= el.price%> </p>
+            <p><%= el.convertedPrice()%> </p>
             <button onclick="clickProductDescrition('<%= el.id %>')"> Description</button>
-            <a href="/carts/<%= el.id %>/add"> add to Cart</a>
             <button onclick="clickAddToCart('<%= el.id %>')">tambah ke keranjang</button>
         </div>
+        <% }) %>
     </div>
-    <% }) %>
 
 </body>
 
@@ -26,7 +26,7 @@
         window.location.href = `/products/${id}/description`
     }
     const clickAddToCart = (id) => {
-        //alert(id)
+        alert("menambahkan satu barang ke keranjang")
         window.location.href = `/carts/${id}/add`
     }
 </script>

@@ -1,8 +1,7 @@
 <div class="header">
-    <div class="header-logo">Shopping</div>
+    <div class="header-logo"><a href="/">Shopping</a></div>
     <div class="header-list">
         <ul>
-
             <% if(user && user === 'fauza'){ %>
             <li>selamat datang <h3><%=user%></h3>
             </li>
@@ -16,7 +15,7 @@
             <li> <a href="/login">Login</a></li>
             <li><a href="/register">Register</a> </li>
             <%}%>
-            <li><%= carts.length %>cart</li>
+            <li><%= carts.length %> <a href="/carts">cart</a></li>
         </ul>
     </div>
 </div>

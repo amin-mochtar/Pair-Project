@@ -1,4 +1,6 @@
 'use strict';
+const convertPrice = require("../helper/convertPrice.js")
+
 const {
   Model
 } = require('sequelize');
@@ -12,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Product.belongsToMany(models.User, {through: "Cart"})
+    }
+
+    convertedPrice(){
+      return convertPrice(this.price)
     }
   };
   Product.init({

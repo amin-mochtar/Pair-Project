@@ -1,5 +1,5 @@
 function cekLogin(req, res, next) {
-  if (!req.session.userName) {
+  if (!req.session.user) {
     res.redirect('/login')
   } else {
     next()
@@ -7,7 +7,7 @@ function cekLogin(req, res, next) {
 }
 
 function cekAdmin(req, res, next) {
-  if (req.session.userName === "fauza") {
+  if (req.session.user && req.session.user.username === "fauza") {
     let admin = req.session.userName
     res.redirect(`/?status=${admin}`)
   }

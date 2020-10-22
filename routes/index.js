@@ -16,8 +16,8 @@ router.use('/logout', routerLogout)
 router.get("/", ProductController.LandingPageProduct)
 
 router.use(cekLogin)
+router.use("/products", productRouter)
 
-router.use("/product", productRouter)
 router.use("/carts", cartRouter)
 
 
