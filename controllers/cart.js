@@ -1,8 +1,9 @@
 const { Cart } = require("../models/index.js")
 
-class CartController{
-    static addCart (req, res){
-        res.redirect("/")
+class CartController {
+    static addCart(req, res) {
+        let id = req.params.id
+        res.send(id)
         // let productId = +req.params.id
         // let userId = +req.session.user.id
 
@@ -15,17 +16,17 @@ class CartController{
         // })
     }
 
-    static delete(req, res){
+    static delete(req, res) {
         let id = +req.params.id
         Product.destroy({
-            where : {id : id}
+            where: { id: id }
         })
-        .then(data => {
-            res.redirect("/cart")
-        })
-        .catch(err=> {
-            res.redirect("/:id/delete")
-        })
+            .then(data => {
+                res.redirect("/cart")
+            })
+            .catch(err => {
+                res.redirect("/:id/delete")
+            })
     }
 }
 
