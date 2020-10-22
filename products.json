@@ -1,0 +1,26 @@
+[
+  {
+    "name": "TV Sony X800H 49 Inch",
+    "price": 6999999,
+    "description": "Step into a new world of 4K HDR color, contrast, and clarity. See beautiful pictures, rich with real world detail and texture",
+    "picture": "https://images-na.ssl-images-amazon.com/images/I/71VC9cPNy6L._AC_SL1080_.jpg"
+  },
+  {
+    "name": "TV Sony W650D",
+    "price": 4999000,
+    "description": "Kenali KDL-40W650D, KDL-48W650D | LED | HD Ready/Full HD | Smart TV dari Sony & jelajahi semua fitur Televisi.",
+    "picture": "https://www.sony.co.id/image/7330e6d37c178d8930475bcc68628ca3?fmt=pjpeg&bgcolor=FFFFFF&bgc=FFFFFF&wid=2515&hei=1320"
+  },
+  {
+    "name": "TV BRAVIA 55 in. KDL-55W650D",
+    "price": 7899000,
+    "description": "3D / Internet LED backlight TV dengan X-Reality™ PRO dan ClearAudio+ untuk gambar dan suara yang mengagumkan.",
+    "picture": "https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/tvs/LG_KDL_55W650D/LG_KDL_55W650D_L_1.jpg"
+  },
+  {
+    "name": "TV Sony - 75 Class X950G Series",
+    "price": 9779000,
+    "description": "2160p (4K) resolution with HDR Android TV/Google Assistant.",
+    "picture": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6331/6331580_rd.jpg"
+  }
+]
