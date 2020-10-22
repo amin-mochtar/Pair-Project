@@ -2,10 +2,21 @@
     <div class="header-logo">Shopping</div>
     <div class="header-list">
         <ul>
+
+            <% if(user && user === 'fauza'){ %>
+            <li>selamat datang <h3><%=user%></h3>
+            </li>
+            <li><a href="/logout">Logout</a> </li>
+            <li><a href="/product/manipulasi">Manipulasi product</a></li>
+            <% }else if (user){ %>
+            <li>selamat datang <h3><%=user%></h3>
+            </li>
+            <li><a href="/logout">Logout</a> </li>
+            <%}else {%>
+            <li> <a href="/login">Login</a></li>
+            <li><a href="/register">Register</a> </li>
+            <%}%>
             <li><%= carts.length %>cart</li>
-            <li>Login</li>
-            <li>Register</li>
-            <li>Logout</li>
         </ul>
     </div>
 </div>

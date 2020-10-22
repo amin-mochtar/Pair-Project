@@ -6,12 +6,13 @@
     <h3 class="section-title">List Product</h3>
 
     <% products.forEach(el => { %>
-    <div class="contents">
-        <div class="contents-item">
+    <div class="contents" style="float: left;">
+        <div class="contents-item" style="display: inline-block;">
             <img src="<%= el.picture %> ">
             <p><%= el.name %> </p>
             <p><%= el.price%> </p>
             <button onclick="clickProductDescrition('<%= el.id %>')"> Description</button>
+            <a href="/carts/<%= el.id %>/add"> add to Cart</a>
             <button onclick="clickAddToCart('<%= el.id %>')">tambah ke keranjang</button>
         </div>
     </div>
@@ -25,7 +26,7 @@
         window.location.href = `/products/${id}/description`
     }
     const clickAddToCart = (id) => {
-        alert(id)
+        //alert(id)
         window.location.href = `/carts/${id}/add`
     }
 </script>

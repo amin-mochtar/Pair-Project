@@ -20,7 +20,8 @@ class ControllerLogin {
           let cekPassword = bcrypt.compareSync(user.password, data.password)
           if (cekPassword) {
             req.session.userName = data.userName
-            return res.redirect('/')
+            // req.session.id = data.id
+            return res.redirect(`/?userName=${req.session.userName}`)
           } else {
             let error = 'Password Anda Salah'
             return res.redirect(`/login?error=${error}`)
