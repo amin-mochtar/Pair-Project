@@ -27,8 +27,12 @@ body {
   }
   
   .contents {
-    height: 500px;
+    width: 100vw;
     margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
   .section-title {
@@ -39,14 +43,14 @@ body {
   }
   
   .contents-item {
-    float: left;
-    margin-right: 40px;
+    /* margin-right: 10px; */
+    width: 30%;
   }
   .contents-item img{
     float: left;
     padding: 5px;
-    width: 200px;
     height: 300px;
+    width: auto;
     text-align: center;
   }
   

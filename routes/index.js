@@ -12,11 +12,15 @@ router.use('/login', routerLogin)
 router.get("/", ProductController.LandingPageProduct)
 
 router.use(function (req, res, next) {
-  if (!req.session.userName) {
-    res.redirect('/login')
-  } else {
-    next()
-  }
+    if (!req.session) {
+        res.redirect('/login')
+    } else {
+        if (!req.session.user) {
+            res.redirect('/login')
+        } else {
+            next()
+        }
+    }
 
 })
 
