@@ -1,10 +1,10 @@
 <%- include("partials/head", {title: "list carts"}) %>
 
 <body>
-    <%- include("partials/nav", {carts}) %>
+    <%- include("partials/nav", {carts, user}) %>
     <% if(carts.length > 0) { %>
     <table>
-        
+
         <% carts.forEach(el => { %>
         <th><img src="<%= el.Product.picture %> " width="200px" height="250px"></th>
         <th><%= el.Product.name %> </th>
@@ -15,24 +15,24 @@
         <% }) %>
         <br><br>
 
-        <button onclick="clickBuy()" type="submit">Beli</button>
 
-        
+
         <% } else { %>
 
         <p>Anda belum menbahkan barang ke keranjang</p>
 
         <% } %>
+        <button onclick="clickBuy()" type="submit">Beli</button>
     </table>
     <script>
         const onAdd = (id, quantity) => {
-            console.log(id,quantity)
+            console.log(id, quantity)
             window.location.href = `/carts/${id}/add-quantity`
         }
 
         const onReduce = (id, quantity) => {
-            console.log(id,quantity)
-            if(quantity <= 1) {
+            console.log(id, quantity)
+            if (quantity <= 1) {
                 // remove
 
                 window.location.href = `/carts/${id}/delete`

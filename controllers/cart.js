@@ -18,6 +18,7 @@ class CartController {
 
     static listCart(req, res) {
         let userId = (req.session && req.session.user) ? req.session.user.id : null
+        let user = (req.session && req.session.user) ? req.session.user.username : null
         if (userId) {
             Cart.findAll({
                 where: { UserId: userId },
@@ -25,14 +26,14 @@ class CartController {
             })
                 .then(carts => {
                     // res.send(carts)
-                    res.render("listCart.ejs", { carts })
+                    res.render("listCart.ejs", { carts, user })
                 })
                 .catch(err => {
                     res.send(err)
                 })
         } else {
             // res.send(carts)
-            res.render("listCart.ejs", { carts: [] })
+            res.render("listCart.ejs", { carts: [], user })
         }
     }
 
@@ -106,11 +107,12 @@ class CartController {
                 res.redirect(`/carts`, { carts: [] })
             } else {
                 let userId = (req.session && req.session.user) ? req.session.user.id : null
+                let user = (req.session && req.session.user) ? req.session.user.username : null
                 Cart.destroy({
                     where: { UserId: userId }
                 })
                     .then(data => {
-                        res.render("sendMail.ejs", { email })
+                        res.render("sendMail.ejs", { email, user })
                     })
                     .catch(err => {
                         res.send(err)

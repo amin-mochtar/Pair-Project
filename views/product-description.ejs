@@ -1,17 +1,7 @@
 <%- include("partials/head", {title: "product description"}) %> 
 
 <body>
-    <div class="header">
-        <div class="header-logo"><a href="/">Shopping</a></div>
-        <div class="header-list">
-            <ul>
-                <li>Login</li>
-                <li>Register</li>
-                <li>Logout</li>
-            </ul>
-        </div>
-    </div>
-    </div> 
+    <%- include("partials/nav", {carts : [], user}) %> 
 
     <div>
         <img src="<%= data.picture%>"> <br>
