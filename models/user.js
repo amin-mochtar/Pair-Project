@@ -2,6 +2,8 @@
 const {
   Model
 } = require('sequelize');
+const { options } = require('../routes');
+const bcrypt = require('bcryptjs')
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -20,7 +22,21 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING
   }, {
     sequelize,
+    validate: {
+      checkdata() {
+        if (this.userName === '' || this.password === '' || this.email === '') {
+          throw new Error(`Semua field harus diisi`)
+        }
+      }
+    },
     modelName: 'User',
   });
+
+  User.addHook("beforeCreate", (instance, option) => {
+    const salt = bcrypt.genSaltSync(5)
+    const hash = bcrypt.hashSync(instance.password, salt)
+    instance.password = hash
+  })
+
   return User;
 };
