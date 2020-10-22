@@ -53,6 +53,7 @@ class ProductController {
             description: req.body.description,
             picture: req.body.picture
         }
+
         Product.create(newProduct)
             .then(() => {
                 res.redirect('/product/manipulasi')
