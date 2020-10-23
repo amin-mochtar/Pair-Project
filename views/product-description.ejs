@@ -1,21 +1,24 @@
-<%- include("partials/head", {title: "product description"}) %> 
+<%- include("partials/head", {title: "product description"}) %>
 
 <body>
-    <%- include("partials/nav", {carts : [], user}) %> 
+    <%- include("partials/nav", {carts : [], user}) %>
 
-    <div>
-        <img src="<%= data.picture%>"> <br>
-        <p><%= data.description %> </p> <br>
-        <p><%= data.convertedPrice(data.price)%> </p>
-        <button onclick="clickAddToCart('<%= data.id %>')">tambah ke keranjang</button>
+    <div class="description-product">
+        <img src="<%= data.picture%>"> 
+        <div class="description-product-text">
+            <p><%= data.description %> </p> 
+            <p><%= data.convertedPrice(data.price)%> </p>
+            <button onclick="clickAddToCart('<%= data.id %>')">tambah ke keranjang</button>
+        </div>
     </div>
 </body>
 
-<%- include("partials/footer") %> 
+<%- include("partials/footer") %>
 <script>
-const clickAddToCart = (id) => {
-    alert(id)
-    window.location.href = `/carts/${id}/add`
-}
+    const clickAddToCart = (id) => {
+        alert(id)
+        window.location.href = `/carts/${id}/add`
+    }
 </script>
+
 </html>
