@@ -25,7 +25,6 @@ class CartController {
                 include: [{ model: Product }]
             })
                 .then(carts => {
-                    // res.send(carts)
                     res.render("listCart.ejs", { carts, user })
                 })
                 .catch(err => {

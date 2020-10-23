@@ -8,26 +8,45 @@ body {
   li {
     list-style: none;
   }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .user-welcome {
+    margin: 0px;
+  }
   
   .header {
+    width: 98vw;
     background-color:orange;
     color: #fff;
     height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .header-logo {
-    float: left;
     font-size: 36px;
-    padding: 20px 40px;
+    padding: 20px 0px 20px 50px;
+  }
+  
+  .header-list ul {
+    display: flex;
+    align-items: center;
+    padding: 20px;
   }
 
   .header-list li {
-    float: left;
-    padding: 33px 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    color: #ae1b2a;
   }
-  
+
   .contents {
-    width: 100vw;
+    width: 98vw;
     margin-top: 100px;
     display: flex;
     justify-content: center;
@@ -45,13 +64,12 @@ body {
   .contents-item {
     /* margin-right: 10px; */
     width: 30%;
+    text-align: center;
+    margin-bottom: 50px;
   }
   .contents-item img{
-    float: left;
-    padding: 5px;
-    height: 300px;
+    height: 200px;
     width: auto;
-    text-align: center;
   }
   
   .contents-item p {
@@ -59,22 +77,65 @@ body {
     margin-top: 30px;
   }
 
+  .description-product {
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    margin: 80px 0px 50px 0px;
+  }
+
+  .description-product img {
+    height: 300px;
+    width: auto;
+    
+  }
+
+  .cart-content{
+    width: 98vw;
+    margin: 50px 0px 50px 0px;
+  }
+
+  .th-image {
+    width: 350px;
+  }
+
+  .button-cart-container {
+    width: 98vw;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 10px 100px 0px;
+  }
+
+  .button-cart {
+    width: 200px;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+
   .footer {
+    width: 100%;
     background-color: #ae1b2a;
     color: #fff;
-    height: 120px;
-    padding: 40px;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .footer-logo {
-    float: left;
+    padding-left: 50px;
     font-size: 32px;
   }
   
   .footer-list {
-    float: right;
+    padding-right: 50px ;
   }
   
+  .footer-list ul {
+    display: flex;
+  }
+
   .footer-list li {
-    padding-bottom: 20px;
+    padding: 10px;
   }

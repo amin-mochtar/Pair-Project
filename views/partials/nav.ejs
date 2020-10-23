@@ -3,12 +3,12 @@
     <div class="header-list">
         <ul>
             <% if(user && user === 'fauza'){ %>
-            <li>selamat datang <h3><%=user%></h3>
+            <li>selamat datang <h3 class="user-welcome"><%=user%></h3>
             </li>
             <li><a href="/logout">Logout</a> </li>
             <li><a href="/product/manipulasi">Manipulasi product</a></li>
             <% }else if (user){ %>
-            <li>selamat datang <h3><%=user%></h3>
+            <li>selamat datang <h3 class="user-welcome"><%=user%></h3>
             </li>
             <li><a href="/logout">Logout</a> </li>
             <%}else {%>

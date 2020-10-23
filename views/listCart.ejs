@@ -1,30 +1,31 @@
+<% var dataCart = carts; %>
+
 <%- include("partials/head", {title: "list carts"}) %>
 
 <body>
     <%- include("partials/nav", {carts, user}) %>
     <% if(carts.length > 0) { %>
-    <table>
-
+    <div>
         <% carts.forEach(el => { %>
-        <th><img src="<%= el.Product.picture %> " width="200px" height="250px"></th>
-        <th><%= el.Product.name %> </th>
-        <th><%= el.Product.convertedPrice() %> </th>
-        <th><button onclick="onReduce('<%= el.id %>', '<%=el.quantity%>')">-</button><%= el.quantity %> <button
-                onclick="onAdd('<%=el.id%>', '<%=el.quantity%>')">+</button></th>
-        <th><%= el.quantity * el.Product.price %> </th>
-        <% }) %>
-        <br><br>
-
-
+        <table class="cart-content">
+            <th class="th-image"><img src="<%= el.Product.picture %> " width="300px" height="auto"></th>
+            <th><%= el.Product.name %> </th>
+            <th><%= el.Product.convertedPrice() %> </th>
+            <th><button onclick="onReduce('<%= el.id %>', '<%=el.quantity%>')">-</button><%= el.quantity %> <button
+                    onclick="onAdd('<%=el.id%>', '<%=el.quantity%>')">+</button></th>
+            <th><%= el.quantity * el.Product.price %> </th>
+            <% }) %>
+        </table>
 
         <% } else { %>
-
         <p>Anda belum menbahkan barang ke keranjang</p>
-
         <% } %>
-        <button onclick="clickBuy()" type="submit">Beli</button>
-    </table>
+        <div class="button-cart-container">
+            <button class="button-cart" onclick="clickBuy('<%= carts %>')" type="submit">Beli</button>
+        </div>
+    </div>
     <script>
+
         const onAdd = (id, quantity) => {
             console.log(id, quantity)
             window.location.href = `/carts/${id}/add-quantity`
@@ -41,8 +42,11 @@
                 window.location.href = `/carts/${id}/reduce-quantity`
             }
         }
-        const clickBuy = () => {
+        const clickBuy = (listCart) => {
+            // console.log(listCart)
             window.location.href = `/carts/buy`
         }
     </script>
 </body>
+<%- include("partials/footer") %> 
+</html>
